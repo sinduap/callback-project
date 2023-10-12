@@ -16,14 +16,15 @@ let result2 = myMap(['run', 'Forrest'], function (el) {
 console.log(result2);   // [ 'RUN!', 'FORREST!' ]
 *******************************************************************************/
 
-let myMap = function() {
+let myMap = function (arr, callback) {
+  let result = [];
 
+  for (const val of arr) {
+    result.push(callback(val));
+  }
+
+  return result;
 };
-
-
-
-
-
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 module.exports = myMap;

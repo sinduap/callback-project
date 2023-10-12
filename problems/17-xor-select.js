@@ -31,14 +31,11 @@ console.log(
 // [ 'art', 'app', 'buttery' ]
 *******************************************************************************/
 
-let xorSelect = function() {
-
+let xorSelect = function (arr, ...callbacks) {
+  return arr.filter(
+    val => callbacks.some(cb => cb(val)) && !callbacks.every(cb => cb(val))
+  );
 };
-
-
-
-
-
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 module.exports = xorSelect;

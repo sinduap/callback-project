@@ -21,14 +21,13 @@ console.log(myEvery(['book', 'door'], hasO));           // true
 console.log(myEvery(['book', 'door', 'pen'], hasO));    // false
 *******************************************************************************/
 
-let myEvery = function() {
+let myEvery = function (arr, predicate) {
+  for (const val of arr) {
+    if (!predicate(val)) return false;
+  }
 
+  return true;
 };
-
-
-
-
-
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 module.exports = myEvery;

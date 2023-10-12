@@ -26,14 +26,9 @@ let result4 = count(['follow', 'the', 'yellow', 'brick', 'road'], function (str)
 console.log(result4); // 0
 *******************************************************************************/
 
-let count = function() {
-
+let count = function (arr, predicate) {
+  return arr.reduce((acc, curr) => (predicate(curr) ? acc + 1 : acc), 0);
 };
-
-
-
-
-
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 module.exports = count;
