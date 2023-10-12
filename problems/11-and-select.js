@@ -28,14 +28,9 @@ console.log(andSelect(['ants', 'APPLES', 'ART', 'BACON', 'arm'], isUpperCase,  s
 
 *******************************************************************************/
 
-let andSelect = function() {
-
+let andSelect = function (arr, ...callbacks) {
+  return callbacks.reduce((acc, curr) => acc.filter(curr), arr);
 };
-
-
-
-
-
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 module.exports = andSelect;

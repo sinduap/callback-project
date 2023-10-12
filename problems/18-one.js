@@ -37,14 +37,11 @@ let result6 = one(['apple', 'dog', 'food', 'cat'], function(el, idx) {
 console.log(result6);   // true
 *******************************************************************************/
 
-let one = function() {
-
+let one = function (arr, callback) {
+  return (
+    arr.reduce((acc, curr, i) => (callback(curr, i) ? acc + 1 : acc), 0) === 1
+  );
 };
-
-
-
-
-
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 module.exports = one;

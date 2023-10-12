@@ -23,14 +23,13 @@ let result3 = mySome(['soup', 'noodles', 'bike', 'ship'], function(ele) {
 console.log(result3);   // true
 *******************************************************************************/
 
-let mySome = function() {
+let mySome = function (arr, predicate) {
+  for (const [i, val] of arr.entries()) {
+    if (predicate(val, i)) return true;
+  }
 
+  return false;
 };
-
-
-
-
-
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 module.exports = mySome;
